@@ -3,9 +3,11 @@ use bevy::prelude::*;
 
 mod common;
 mod dialogue;
+mod cooking;
 
 use common::*;
 use dialogue::*;
+use cooking::*;
 
 fn main() {
     App::new()
@@ -16,8 +18,9 @@ fn main() {
             present_mode: bevy::window::PresentMode::AutoVsync,
             ..default()
         })
-        .add_state(GameState::Dialogue)
+        .add_state(GameState::Cooking)
         .insert_resource(DialogueState(0, 0))
+        .insert_resource(CookingSelection(0, 0))
         .add_plugins(DefaultPlugins)
         .add_startup_system(setup)
         .add_system_set(SystemSet::on_enter(GameState::Dialogue)
@@ -27,6 +30,12 @@ fn main() {
             .with_system(dialogue_next))
         .add_system_set(SystemSet::on_exit(GameState::Dialogue)
             .with_system(dialogue_cleanup))
+        .add_system_set(SystemSet::on_enter(GameState::Cooking)
+            .with_system(cooking_setup))
+        .add_system_set(SystemSet::on_update(GameState::Cooking)
+            .with_system(cook))
+        .add_system_set(SystemSet::on_exit(GameState::Cooking)
+            .with_system(cooking_cleanup))
         .add_system(bevy::window::close_on_esc)
         .run();
 }
