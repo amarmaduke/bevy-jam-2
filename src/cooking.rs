@@ -140,7 +140,7 @@ pub fn cooking_setup(mut commands: Commands
 
     commands.spawn_bundle(SpriteBundle {
             texture: asset_server.load("backgrounds/cooking.png"),
-            transform: Transform::from_scale((0.71, 0.71, -1.).into()),
+            transform: Transform::from_scale((0.71, 0.71, 0.).into()),
             ..default()
         }).insert(CookingScene);
 }

@@ -13,9 +13,9 @@ pub fn dialogue_setup(mut commands: Commands
     let window = windows.primary();
     let (width, height) = (window.width(), window.height());
     let scale = height/2160.;
-    let left_character_place = Transform::from_xyz(-width/2. + width/4., 0., 0.)
+    let left_character_place = Transform::from_xyz(-width/2. + width/4., 0., 0.5)
         .with_scale((scale, scale, 1.).into());
-    let right_character_place = Transform::from_xyz(width/2. - width/4., 0., 0.)
+    let right_character_place = Transform::from_xyz(width/2. - width/4., 0., 0.5)
         .with_scale((scale, scale, 1.).into());
     
     commands.spawn()
