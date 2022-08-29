@@ -42,7 +42,7 @@ pub fn dialogue_setup(mut commands: Commands
     let text_alignment = TextAlignment::CENTER;
     let text_place = |z| Transform::from_xyz(0., -height/4. - height/16., z);
     let outer_box_size = (width - width/4., height/4.);
-    let text_size = (width - width/4., height/4. - height/12.);
+    let text_size = (width - width/3., height/4. - height/12.);
     let text_bounds = Text2dBounds { 
         size: text_size.into()
     };

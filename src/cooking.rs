@@ -263,92 +263,92 @@ impl CookingSelection {
     pub fn combination_data(&self) -> (&'static str, &'static str, u32, u32, u32) {
         let CookingSelection(first, second) = self;
         match (first, second) {
-            (1, 1) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-            , 0, 0, 0
+            (1, 1) => ("combinations/pumpkin_mash.png",
+                r#"Like mom's mash potatoes but with the superior vegetable. Pumpkin mash is the perfect fall side dish to round out any meaty plate."#
+            , 35, 60, 5
             ),
             (1, 2) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, pumpkins and skulls just don't seem to mix!"#
                 , 0, 0, 0
             ),
-            (1, 3) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (1, 3) => ("combinations/pumpkin_pie.png",
+                r#"A classic favorite. Pumpkin pie is delicious but not too sweet. The kids will love it and their teeth will too."#
+                , 70, 30, 0
             ),
             (1, 4) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, pumpkins and grapes just don't seem to mix!"#
                 , 0, 0, 0
             ),
-            (1, 5) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (1, 5) => ("combinations/pumpkin_spice_chocolate_bar.png",
+                r#"Chocolate is always better cut with an earthy flavor, but make no mistake these candy bars are packed with sugar! Enjoy your lovable pumpkin aroma in a new chocolatey way."#
+                , 85, 15, 0
             ),
-            (1, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (1, 6) => ("combinations/pumpkin_spice_latte.png",
+                r#"Not just for your coffee enthusiast! Pumpkin spice is as Halloween as it gets. Don't sleep on a tasty spicy treat that's quite sweet."#
+                , 50, 50, 0
             ),
             (2, 2) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, skulls just don't seem to mix!"#
                 , 0, 0, 0
             ),
             (2, 3) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, skull and egg just doesn't seem to mix!"#
                 , 0, 0, 0
             ),
-            (2, 4) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (2, 4) => ("combinations/bone_marrow_wine.png",
+                r#"What's better than an afternoon in front of the fire place with a cool glass of Bone Marrow Wine? Unlike other wine's you might try this one is infused with the life force of a once living being. Perfect for your fledgling vampire friends."#
+                , 0, 60, 40
             ),
-            (2, 5) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (2, 5) => ("combinations/chocolate_skull_fondue.png",
+                r#"Chocolate fondue is great on it's own, so why not pair it with the dread of death? Skull fondue is like ecstasy with a dash of existential crisis. Zombies seem to love it the most!"#
+                , 60, 0, 40
             ),
             (2, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, skull and coffee beans just doesn't seem to mix!"#
                 , 0, 0, 0
             ),
-            (3, 3) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (3, 3) => ("combinations/egg_over_easy.png",
+                r#"Eggs over easy is as old as bread. Can you really go wrong with this one? Just enjoy yourself a nice lightly seasoned egg already!"#
+                , 5, 90, 5
             ),
-            (3, 4) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (3, 4) => ("combinations/egg_salad.png",
+                r#"Grapes in an egg salad are the perfect sweet kick to an otherwise savory meal. Just imagine they're eye balls if it's not gruesome enough for you!"#
+                , 5, 80, 15
             ),
-            (3, 5) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (3, 5) => ("combinations/chocolate_chip_cookie.png",
+                r#"Chocolate chip cookies are the perfect treat for a young boy and girl. Especially if you have to fatten them up first!"#
+                , 100, 0, 0
             ),
-            (3, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (3, 6) => ("combinations/egg_coffee.png",
+                r#"Egg coffee is known for it's double layers, a bottom layer of coffee and a top layer of tasty egg cream. Check your moustaches after this one fellas."#
+                , 90, 10, 0
             ),
-            (4, 4) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (4, 4) => ("combinations/grape_jam.png",
+                r#"Grape jam is what brings everybody together! Is that a pigeon I see sitting on the lid of the jar? Hey, hey, what are you doing! Stop stealing my grape jam! I spent valuable hours on that! Hey! Stop it!"#
+                , 60, 20, 20
             ),
-            (4, 5) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (4, 5) => ("combinations/chocolate_covered_grapes.png",
+                r#"The only thing better than chocolate covered strawberries are chocolate covered grapes! Did I remind you to just imagine they're eyeballs yet?"#
+                , 95, 5, 0
             ),
             (4, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"In a puff of smoke, grapes and coffee beans just doesn't seem to mix!"#
                 , 0, 0, 0
             ),
-            (5, 5) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (5, 5) => ("combinations/molten_dark_chocolate_candy.png",
+                r#"Nothing is as delicious as a chocolate ball filled with molten chocolate. This lava is so hot it will sear right through your mandible. You'll scream in agony as you go in for another bite. The horror of it all is irresistible!"#
+                , 80, 0, 20
             ),
-            (5, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (5, 6) => ("combinations/chocolate_espresso.png",
+                r#"On the move with a sweet tooth? Chocolate espresso is lot a shot of pure adrenaline!"#
+                , 50, 50, 0
             ),
-            (6, 6) => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
-                , 0, 0, 0
+            (6, 6) => ("combinations/black_coffee.png",
+                r#"One time I a werewolf told me that black coffee was the only solution to a transformation hangover. If it's just alcohol or something worse, give a straight black coffee a try to restart your senses."#
+                , 0, 100, 0
             ),
             _ => ("combinations/failure.png",
-                r#"This is a description of failure.png."#
+                r#"How did you manage to mix together imaginary ingredients!?"#
                 , 0, 0, 0
             ),
         }
