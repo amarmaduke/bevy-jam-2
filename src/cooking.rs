@@ -1,4 +1,6 @@
 
+use std::cmp::{min, max};
+
 use bevy::prelude::*;
 use bevy::text::Text2dBounds;
 
@@ -6,10 +8,10 @@ use crate::common::*;
 use crate::dialogue::DialogueState;
 
 pub fn cooking_setup(mut commands: Commands
-    , windows: Res<Windows>
-    , selection: Res<CookingSelection>
+    , mut selection: ResMut<CookingSelection>
     , asset_server: Res<AssetServer>)
 {
+    selection.reset();
     let description = [
         ["Press 5", "Press 3", "Press 1"],
         ["Press 6", "Press 4", "Press 2"]
@@ -118,7 +120,7 @@ pub fn cooking_setup(mut commands: Commands
             text: Text::from_section("Combination description.", text_style)
                 .with_alignment(TextAlignment::CENTER),
             text_2d_bounds: Text2dBounds {
-                size: (400., 300.).into()
+                size: (380., 300.).into()
             },
             transform: Transform::from_xyz(-300., -200., 3.),
             ..default()
@@ -224,6 +226,12 @@ pub struct SelectionText;
 pub struct CookingSelection(pub u32, pub u32);
 
 impl CookingSelection {
+    pub fn reset(&mut self) {
+        let CookingSelection(first, second) = self;
+        *first = 0;
+        *second = 0;
+    }
+
     pub fn update(&mut self, next: u32) {
         let CookingSelection(first, second) = self;
         *first = *second;
@@ -262,7 +270,8 @@ impl CookingSelection {
     // 6: Coffee Beans
     pub fn combination_data(&self) -> (&'static str, &'static str, u32, u32, u32) {
         let CookingSelection(first, second) = self;
-        match (first, second) {
+        let (i, j) = (min(first, second), max(first, second));
+        match (i, j) {
             (1, 1) => ("combinations/pumpkin_mash.png",
                 r#"Like mom's mash potatoes but with the superior vegetable. Pumpkin mash is the perfect fall side dish to round out any meaty plate."#
             , 35, 60, 5
@@ -347,8 +356,8 @@ impl CookingSelection {
                 r#"One time I a werewolf told me that black coffee was the only solution to a transformation hangover. If it's just alcohol or something worse, give a straight black coffee a try to restart your senses."#
                 , 0, 100, 0
             ),
-            _ => ("combinations/failure.png",
-                r#"How did you manage to mix together imaginary ingredients!?"#
+            _ => ("",
+                r#"Combination description."#
                 , 0, 0, 0
             ),
         }
