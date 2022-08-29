@@ -3,4 +3,5 @@
 pub enum GameState {
     Dialogue,
     Cooking,
+    Intermission
 }
